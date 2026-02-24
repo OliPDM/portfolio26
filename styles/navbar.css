@@ -18,13 +18,11 @@ nav {
     right: 37px;
     z-index: 99;
     background-color: #141D2F;
+}
 
-    >div {
-        display: flex;
-        align-items: center;
-    }
-
-
+nav div {
+    display: flex;
+    align-items: center;
 }
 
 .navigation-bar {
