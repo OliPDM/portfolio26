@@ -1,0 +1,64 @@
+.dNone {
+    display: none;
+}
+
+h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+nav {
+    height: 109px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 37px;
+    right: 37px;
+    z-index: 99;
+    background-color: #141D2F;
+
+    >div {
+        display: flex;
+        align-items: center;
+    }
+
+
+}
+
+.navigation-bar {
+    gap: 92px;
+}
+
+.navigation-links {
+    display: flex;
+    font-size: 24px;
+    gap: 29px;
+}
+
+.navigation-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.navigation-links a:hover {
+    color: #70e71a;
+}
+
+.change_language_button {
+    height: 32px;
+    width: 92px;
+    cursor: pointer;
+}
+
+.purple-dot {
+    color: #9747ff;
+}
+
+.green-r {
+    color: #70e71a;
+}

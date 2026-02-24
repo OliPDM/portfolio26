@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/landing-section.css">
+
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <nav>
+        <h1>
+            <a href="#landing_page">
+                <span>Ol</span><span class="purple-dot">i</span><span>ve</span><span class="green-r">r</span>
+            </a>
+        </h1>
+
+
+        <div class="navigation-bar">
+
+            <div class="navigation-links">
+                <a href="#about_me">About me</a>
+                <a href="#skills">Skills</a>
+                <a href="#">Portfolio</a>
+            </div>
+
+            <div onclick="toggleLanguageIcon()" class="change_language_button">
+                <img id="de_active" src="./assets/icons/de_active.png" alt="">
+                <img id="en_active" class="dNone" src="./assets/icons/en_active.png" alt="">
+            </div>
+
+        </div>
+
+    </nav>
+    <landing-section>
+        <div class="headlines">
+            <h1>Oliver Geschine</h1>
+            <h2>FRONTEND DEVELOPER</h2>
+        </div>
+
+        <button>Let's get in touch!</button>
+
+
+        <div class="links">
+            <img src="./assets/icons/green_line.png" alt="">
+            <a href="https://github.com/OliPDM" target="_blank"><img src="./assets/icons/github.png" alt="Github"></a>
+            <a href=""><img src="./assets/icons/email.png" alt="Email"></a>
+            <a href=""><img src="./assets/icons/linkedin.png" alt="LinkedIn"></a>
+        </div>
+
+    </landing-section>
+</body>
+
+</html>
