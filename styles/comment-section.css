@@ -1,0 +1,41 @@
+.comment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+    gap: 60px;
+    box-sizing: border-box;
+}
+
+.comment-content {
+    display: flex;
+    gap: 20px;
+}
+
+.comment-container {
+    flex: 1;
+}
+
+.comment-img img {
+    width: 100px;
+    height: 100px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+.comment-navigation-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.comment-navigation-container button {
+    cursor: pointer;
+    color: white;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: #70E61C;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}

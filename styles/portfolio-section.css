@@ -3,9 +3,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 100px 50px;
 }
 
-h1 {
+.portfolio_section h1 {
     font-size: 90px;
     font-weight: 700;
 }
@@ -26,38 +27,53 @@ h1 {
     height: 603px;
     border: solid 1px #70E61C;
     border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.project_container img {
-    width: 300px;
-    height: 300px;
+.project-container-img {
+    width: 750px;
+    height: 600px;
+    transition: all 0.3s ease;
+}
+
+.zoomed {
+    width: 1440px;
+    height: 1500px;
+    transition: all 0.3s ease;
+    opacity: 0.3;
 }
 
 .overlay {
     display: flex;
     flex-direction: column;
-    height: 603px;
-    justify-content: space-between;
-    position: relative;
+    height: 550px;
+    gap: 74px;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
     z-index: 10;
 }
 
 .button_container {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 24px;
+    /* padding-top: 24px; */
 }
 
 .portfolio_section button {
     cursor: pointer;
     color: white;
     height: 58px;
-    width: 220px;
+    width: 160px;
     border-radius: 10px;
     padding: 15px 30px;
     font-size: 23px;
     line-height: 120%;
-    transition: all 0.1s ease-in-out;
     margin-top: 20px;
 }
 
@@ -86,16 +102,29 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 50px;
-    height: 400px;
+    gap: 40px;
+    height: 374px;
+    padding: 40px;
+    padding-top: 0px;
+    padding-bottom: 0;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
-h2 {
+.portfolio_section h2 {
     color: #9747FF;
     font-size: 32px;
     font-weight: 700;
+}
+
+.project-description {
+    font-size: 18px;
+    line-height: 125%;
+    text-align: center;
+}
+
+.used-skills {
+    color: #70E61C;
 }
