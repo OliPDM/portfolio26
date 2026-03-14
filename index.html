@@ -17,6 +17,7 @@
 
     <script src="./scripts/projects.js"></script>
     <script src="./scripts/comments.js"></script>
+    <script src="./scripts/contact.js"></script>
     <script src="script.js"></script>
 </head>
 
@@ -54,7 +55,7 @@
                 <h2>FRONTEND DEVELOPER</h2>
             </div>
 
-            <button>Let's get in touch!</button>
+            <a href="#contact" class="landing-section-button">Let's get in touch!</a>
 
 
             <div class="links">
@@ -180,7 +181,7 @@
                         doloribus,
                         officia
                         consequatur iste consequuntur quasi.</span>
-                    <button>Let's talk!</button>
+                    <a href="#contact" class="skills-section-button">Let's talk!</a>
                 </div>
             </div>
         </section>
@@ -221,7 +222,7 @@
             </div>
         </section>
 
-        <section class="contact-section">
+        <section id="contact" class="contact-section">
 
             <div class="contact-headline-container">
                 <h1>Contact</h1>
@@ -241,20 +242,19 @@
                     </div>
                 </div>
                 <div class="contact-input-container">
-                    <input type="text" class="contact-name" placeholder="Your Name">
-                    <input type="text" class="contact-email" placeholder="Your Email">
-                    <input type="text" class="contact-message" placeholder="Your Message">
+                    <input id="name" type="text" class="contact-name" placeholder="Your name">
+                    <input id="email" type="text" class="contact-email" placeholder="Your email">
+                    <textarea id="message" class="contact-message" placeholder="Your message"></textarea>
                     <div>
-                        <input type="checkbox">
+                        <input id="checkbox" onclick="enableMsgButton()" type="checkbox">
                         <span> I've read the privacy policy and agree to the processing of my data as outlined.</span>
                         <span>Please accept the privacy policy.</span>
                     </div>
-                    <button>Send message</button>
+                    <button id="sendMessageButton" class="send-message-button" disabled>Send message</button>
+                    <a id="up_arrow" class="arrow" href="#landing_page"></a>
                 </div>
             </div>
-            <div>
-                <button>Back to top</button>
-            </div>
+
 
 
         </section>

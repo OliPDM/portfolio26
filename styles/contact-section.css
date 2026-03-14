@@ -75,22 +75,74 @@
     box-sizing: border-box;
     background-color: transparent;
     color: white;
+    text-align: start;
+}
+
+.contact-input-container textarea {
+    padding: 20px;
+    border: 1px solid #9747FF;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: white;
+    text-align: start;
+    resize: none;
+}
+
+.contact-content-container input:hover {
+    border-color: #1CDAE6;
 }
 
 .contact-input-container input::placeholder {
     color: white;
     font-size: 16px;
-    ;
+    opacity: 30%;
 }
 
-.contact-input-container button {
+.contact-message {
+    height: 202px;
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.send-message-button {
     width: 253px;
     height: 58px;
     padding: 20px;
     border: none;
     border-radius: 10px;
-    background-color: #B6B6B6;
     color: white;
     font-size: 16px;
     cursor: pointer;
+    position: relative;
+    line-height: 120%;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    align-self: center;
+}
+
+.checked {
+    background-color: #70E61C;
+}
+
+.checked:hover {
+    background-color: #9747FF;
+    transform: scale(1.15);
+}
+
+#up_arrow {
+    background-image: url("../assets/icons/white_arrow_up_framed.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: flex-end;
+    margin-top: 20px;
+}
+
+#up_arrow:hover {
+    background-image: url("../assets/icons/green_arrow_up_framed.png");
 }

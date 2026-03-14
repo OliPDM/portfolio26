@@ -30,7 +30,7 @@
     margin-bottom: 60px;
 }
 
-.landing-section button {
+.landing-section-button {
     cursor: pointer;
     color: white;
     height: 58px;
@@ -41,9 +41,10 @@
     line-height: 120%;
     transition: all 0.3s ease-in-out;
     border: none;
+    text-decoration: none;
 }
 
-.landing-section button:hover {
+.landing-section-button:hover {
     background-color: #9747FF;
     transform: scale(1.15);
 }

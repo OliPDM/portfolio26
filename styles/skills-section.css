@@ -151,7 +151,10 @@
     color: #9747ff;
 }
 
-.skills_section button {
+.skills-section-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     color: white;
     height: 58px;
@@ -164,9 +167,11 @@
     transition: all 0.3s ease-in-out;
     border: none;
     margin-top: 20px;
+    text-decoration: none;
+    line-height: 120%;
 }
 
-.skills_section button:hover {
+.skills-section-button:hover {
     background-color: #9747FF;
     transform: scale(1.15);
 }
