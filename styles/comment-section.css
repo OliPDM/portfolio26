@@ -16,24 +16,40 @@
     gap: 48px;
     box-sizing: border-box;
     width: 100%;
+
 }
 
 .comment-container {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border: 3px solid #9747FF;
-    border-radius: 10px;
+    border-radius: 30px;
     width: 851px;
     height: 272px;
     padding: 48px 96px;
+    gap: 40px;
+}
+
+.comment-writer-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+}
+
+.comment-writer {
+    white-space: nowrap;
+    justify-self: end;
 }
 
 .quote-marks {
-    width: 65px;
-    height: 70px;
+    width: 97px;
+    height: 68px;
     position: relative;
-    left: 70px;
-    bottom: 50px;
+    left: 80px;
+    bottom: 40px;
 }
 
 .comment-img-container {
@@ -43,11 +59,35 @@
 }
 
 .comment-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+}
+
+.green-border {
     width: 272px;
     height: 272px;
-    background-color: #ccc;
-    border-radius: 50%;
     border: 3px solid #70E61C;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.comment-img.transition-out {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.comment-blue-line {
+    height: 2px;
+    border-radius: 10px;
+    width: 100%;
+    min-width: 60px;
 }
 
 .comment-green-line {

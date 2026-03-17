@@ -22,10 +22,22 @@ let comments = [
 let currentCommentCount = 0;
 
 function renderComments() {
-    document.getElementById('comment').innerHTML = comments[currentCommentCount].comment;
-    document.getElementById('name').innerHTML = comments[currentCommentCount].name;
-    document.getElementById('comment_img').src = comments[currentCommentCount].profile_img;
-    document.getElementById('position').innerHTML = comments[currentCommentCount].position;
+    const commentImg = document.getElementById('comment_img');
+
+    // Scale + Fade-out Effekt
+    commentImg.classList.add('transition-out');
+
+    setTimeout(() => {
+        // Content während der Transition ändern
+        document.getElementById('comment').innerHTML = comments[currentCommentCount].comment;
+        document.getElementById('name').innerHTML = comments[currentCommentCount].name;
+        document.getElementById('position').innerHTML = comments[currentCommentCount].position;
+        commentImg.src = comments[currentCommentCount].profile_img;
+
+        // Scale + Fade-in Effekt
+        commentImg.classList.remove('transition-out');
+    }, 150);
+
     updateNavigationDots();
 }
 
