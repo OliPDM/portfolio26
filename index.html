@@ -21,7 +21,7 @@
     <script src="script.js"></script>
 </head>
 
-<body onload="renderProjects(), renderComments()">
+<body onload="renderProjects(), renderComments(), initContactForm()">
     <div class="content-wrapper">
         <nav>
             <h1>
@@ -264,19 +264,36 @@
                     </div>
                 </div>
                 <div class="contact-input-container">
-                    <input id="name" type="text" class="contact-name" placeholder="Your name">
-                    <input id="email" type="text" class="contact-email" placeholder="Your email">
-                    <textarea id="message" class="contact-message" placeholder="Your message"></textarea>
+                    <div class="inputFieldWrapper">
+                        <input class="inputFields" type="text" placeholder="Your name" id="contactName" required>
+                        <img class="inputIcon" src="./assets/img/person.svg">
+                        <span id="namePlaceholderError" class="errorMsg">Placeholder</span>
+                        <div id="nameError" class="inputError dNone">Fehlertext</div>
+                    </div>
+                    <div class="inputFieldWrapper">
+                        <input class="inputFields" type="email" placeholder="Your email" id="contactEmail" required>
+                        <img class="inputIcon" src="./assets/img/mail.svg">
+                        <span id="emailPlaceholderError" class="errorMsg">Placeholder</span>
+                        <div id="emailError" class="inputError dNone">Fehlertext</div>
+                    </div>
+                    <div class="inputFieldWrapper">
+                        <input class="inputFields" type="text" placeholder="Your message" id="contactMessage" required>
+                        <img class="inputIcon" src="./assets/img/phone.svg">
+                        <span id="phonePlaceholderError" class="errorMsg">Placeholder</span>
+                        <div id="messageError" class="inputError dNone">Fehlertext</div>
+                    </div>
                     <div>
                         <input id="checkbox" onclick="enableMsgButton()" type="checkbox">
                         <span> I've read the privacy policy and agree to the processing of my data as outlined.</span>
-                        <span>Please accept the privacy policy.</span>
+                        <span class="error-message">Please accept the privacy policy.</span>
                     </div>
                     <button id="sendMessageButton" class="send-message-button" disabled>Send message</button>
                     <a id="up_arrow" class="arrow" href="#landing_page"></a>
                 </div>
             </div>
+            <div class="inputFieldContainer">
 
+            </div>
 
 
         </section>
