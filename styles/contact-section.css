@@ -217,3 +217,50 @@ input::placeholder {
 .errorMsg.visible {
     visibility: visible;
 }
+
+.success-message {
+    background-color: #70E61C;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.error-message-popup {
+    background-color: #FF4444;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.send-message-button.loading {
+    background-color: #9747FF;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.send-message-button:disabled {
+    background-color: #B6B6B6;
+    cursor: not-allowed;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

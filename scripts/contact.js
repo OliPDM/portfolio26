@@ -1,43 +1,87 @@
+const EMAIL_CONFIG = {
+    serviceId: 'service_vet94ip',     // Ersetzen Sie mit Ihrer EmailJS Service ID
+    templateId: 'template_h8anrii',   // Ersetzen Sie mit Ihrer EmailJS Template ID
+    publicKey: 'FjqmytnRfRDnz8Rhd'      // Ersetzen Sie mit Ihrem EmailJS Public Key
+};
 let hasError = false; // Global definieren
+let isFormValid = false;
+
+function initEmailJS() {
+    emailjs.init(EMAIL_CONFIG.publicKey);
+}
 
 function enableMsgButton() {
     let checkbox = document.getElementById("checkbox");
     let sendMessageButton = document.getElementById("sendMessageButton");
 
-    if (checkbox.checked) {
+    if (checkbox.checked && isFormValid) { // ⚠️ HINZUGEFÜGT: && isFormValid
         sendMessageButton.disabled = false;
-        document.getElementById("sendMessageButton").classList.add("checked");
+        sendMessageButton.classList.add("checked");
     } else {
         sendMessageButton.disabled = true;
-        document.getElementById("sendMessageButton").classList.remove("checked");
+        sendMessageButton.classList.remove("checked");
     }
 }
 
 // Event-Listener für das Formular hinzufügen
 function initContactForm() {
+    initEmailJS();
     const sendButton = document.getElementById('sendMessageButton');
-    const form = document.querySelector('.contact-input-container');
+    const checkbox = document.getElementById('checkbox'); // ⚠️ KORRIGIERT: checkbox definieren
 
     // Submit Event für Button
     sendButton.addEventListener('click', handleFormSubmit);
+    checkbox.addEventListener('change', enableMsgButton);
 
-    // Real-time Validation für Input-Felder
+    // Real-time Validation für Input-Felder - ⚠️ KORRIGIERT: input statt blur
+    document.getElementById('contactName').addEventListener('input', validateFormRealTime);
+    document.getElementById('contactEmail').addEventListener('input', validateFormRealTime);
+    document.getElementById('contactMessage').addEventListener('input', validateFormRealTime);
+
+    // Blur-Events für detaillierte Validierung
     document.getElementById('contactName').addEventListener('blur', validateSingleField);
     document.getElementById('contactEmail').addEventListener('blur', validateSingleField);
     document.getElementById('contactMessage').addEventListener('blur', validateSingleField);
 }
 
+async function validateFormRealTime() {
+    const isValid = await validateContactInput(false); // false = keine Error-Messages anzeigen
+    isFormValid = isValid;
+    enableMsgButton(); // Button-Status aktualisieren
+}
+
 async function handleFormSubmit(event) {
     event.preventDefault();
 
-    const isValid = await validateContactInput();
+    const sendButton = document.getElementById('sendMessageButton');
+    const originalText = sendButton.innerHTML;
 
-    if (isValid) {
-        // Hier können Sie das Formular senden
-        console.log('Formular ist valid - kann gesendet werden');
-        sendContactForm();
-    } else {
-        console.log('Formular hat Fehler');
+    // Button deaktivieren und Loading-Zustand anzeigen
+    sendButton.disabled = true;
+    sendButton.innerHTML = 'Sending...';
+    sendButton.classList.add('loading');
+
+    try {
+        const isValid = await validateContactInput(true); // true = Error-Messages anzeigen
+
+        if (isValid) {
+            const success = await sendContactForm();
+            if (success) {
+                showSuccessMessage();
+                resetForm();
+            } else {
+                showErrorMessage('Failed to send message. Please try again.');
+            }
+        }
+    } catch (error) {
+        console.error('Error sending form:', error);
+        showErrorMessage('An error occurred. Please try again.');
+    } finally {
+        // Button zurücksetzen
+        sendButton.disabled = false;
+        sendButton.innerHTML = originalText;
+        sendButton.classList.remove('loading');
+        enableMsgButton();
     }
 }
 
@@ -46,11 +90,15 @@ async function validateSingleField(event) {
 
     if (fieldId === 'contactEmail') {
         await validateAddEmailFormat();
+    } else if (fieldId === 'contactMessage') {
+        await validateMessageFormat();
     }
-    // Weitere Validierungen können hier hinzugefügt werden
+
+    // Form-Status nach einzelner Feldvalidierung aktualisieren
+    validateFormRealTime();
 }
 
-async function validateContactInput() {
+async function validateContactInput(showErrors = true) {
     let inputs = getContactInputs();
     let values = {
         name: inputs.nameInput.value.trim(),
@@ -58,11 +106,16 @@ async function validateContactInput() {
         message: inputs.messageInput.value.trim()
     };
 
-    resetContactInputErrors(inputs);
-    hasError = false; // Reset
-    if (checkEmptyFields(inputs, values)) return false;
-    let emailValid = await validateAddEmailFormat();
-    let messageValid = await validateMessageFormat();
+    if (showErrors) {
+        resetContactInputErrors(inputs);
+    }
+    hasError = false;
+
+    if (checkEmptyFields(inputs, values, showErrors)) return false;
+
+    let emailValid = await validateAddEmailFormat(showErrors);
+    let messageValid = await validateMessageFormat(showErrors);
+
     return emailValid && messageValid && !hasError;
 }
 
@@ -89,7 +142,7 @@ function resetContactInputErrors(inputs) {
         }
     });
 
-    ['namePlaceholderError', 'emailPlaceholderError', 'phonePlaceholderError'].forEach(id => {
+    ['namePlaceholderError', 'emailPlaceholderError', 'messagePlaceholderError'].forEach(id => {
         let el = document.getElementById(id);
         if (el) {
             el.classList.remove('visible');
@@ -98,19 +151,19 @@ function resetContactInputErrors(inputs) {
     });
 }
 
-function checkEmptyFields(inputs, values) {
+function checkEmptyFields(inputs, values, showErrors = true) {
     let hasEmptyFields = false;
 
     if (!values.name) {
-        styleNameValues(inputs);
+        if (showErrors) styleNameValues(inputs);
         hasEmptyFields = true;
     }
     if (!values.email) {
-        styleEmailValues(inputs);
+        if (showErrors) styleEmailValues(inputs);
         hasEmptyFields = true;
     }
     if (!values.message) {
-        styleMessageValues(inputs);
+        if (showErrors) styleMessageValues(inputs);
         hasEmptyFields = true;
     }
 
@@ -135,9 +188,9 @@ function styleEmailValues(inputs) {
 
 function styleMessageValues(inputs) {
     inputs.messageInput.classList.add('error');
-    document.getElementById('phonePlaceholderError').innerHTML = "Please enter a message.";
-    document.getElementById('phonePlaceholderError').classList.add('visible');
-    hideErrorMessages('phonePlaceholderError', 'contactMessage');
+    document.getElementById('messagePlaceholderError').innerHTML = "Please enter a message.";
+    document.getElementById('messagePlaceholderError').classList.add('visible');
+    hideErrorMessages('messagePlaceholderError', 'contactMessage');
     hasError = true;
 }
 
@@ -155,7 +208,7 @@ function hideErrorMessages(id, inputId) {
     }, 3000);
 }
 
-async function validateAddEmailFormat() {
+async function validateAddEmailFormat(showErrors = true) {
     let emailInput = document.getElementById("contactEmail");
     let email = emailInput.value.trim().toLowerCase();
     let pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -166,16 +219,16 @@ async function validateAddEmailFormat() {
     }
 
     if (!pattern.test(email)) {
-        patternTestEmail(emailInput, errorMsgEmail);
+        if (showErrors) patternTestEmail(emailInput, errorMsgEmail);
         return false;
     }
 
-    if (errorMsgEmail) errorMsgEmail.classList.add("dNone");
+    if (errorMsgEmail && showErrors) errorMsgEmail.classList.add("dNone");
     return true;
 }
 
 // Fehlende Funktion hinzufügen
-async function validateMessageFormat() {
+async function validateMessageFormat(showErrors = true) {
     let messageInput = document.getElementById("contactMessage");
     let message = messageInput.value.trim();
     let errorMsgMessage = document.getElementById("messageError");
@@ -185,11 +238,11 @@ async function validateMessageFormat() {
     }
 
     if (message.length < 10) {
-        patternTestMessage(messageInput, errorMsgMessage);
+        if (showErrors) patternTestMessage(messageInput, errorMsgMessage);
         return false;
     }
 
-    if (errorMsgMessage) errorMsgMessage.classList.add("dNone");
+    if (errorMsgMessage && showErrors) errorMsgMessage.classList.add("dNone");
     return true;
 }
 
@@ -204,25 +257,73 @@ function patternTestEmail(emailInput, errorMsgEmail) {
     }, 3000);
 }
 
-function patternTestMessage(message, errorMsgMessage) {
-    message.classList.add("error");
+function patternTestMessage(messageInput, errorMsgMessage) {
+    messageInput.classList.add("error");
     errorMsgMessage.innerText = "Message must be at least 10 characters long.";
     errorMsgMessage.classList.remove("dNone");
     setTimeout(() => {
         errorMsgMessage.classList.add("dNone");
         errorMsgMessage.innerText = "";
-        message.classList.remove("error");
+        messageInput.classList.remove("error");
     }, 3000);
 }
 
-function sendContactForm() {
-    // Hier die eigentliche Versendung implementieren
-    alert('Message sent successfully!');
+async function sendContactForm() {
+    try {
+        const templateParams = {
+            from_name: document.getElementById('contactName').value.trim(),
+            from_email: document.getElementById('contactEmail').value.trim(),
+            message: document.getElementById('contactMessage').value.trim(),
+            to_email: 'oli.geschine@web.de' // Ihre E-Mail-Adresse hier eintragen
+        };
 
-    // Formular zurücksetzen
+        const response = await emailjs.send(
+            EMAIL_CONFIG.serviceId,
+            EMAIL_CONFIG.templateId,
+            templateParams
+        );
+
+        console.log('Email sent successfully:', response);
+        return true;
+    } catch (error) {
+        console.error('Email sending failed:', error);
+        return false;
+    }
+}
+
+function showSuccessMessage() {
+    // Erfolgs-Nachricht anzeigen
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'success-message';
+    messageDiv.innerHTML = '✓ Message sent successfully!';
+
+    const contactSection = document.getElementById('contact');
+    contactSection.appendChild(messageDiv);
+
+    setTimeout(() => {
+        messageDiv.remove();
+    }, 5000);
+}
+
+function showErrorMessage(message) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'error-message-popup';
+    messageDiv.innerHTML = `✗ ${message}`;
+
+    const contactSection = document.getElementById('contact');
+    contactSection.appendChild(messageDiv);
+
+    setTimeout(() => {
+        messageDiv.remove();
+    }, 5000);
+}
+
+function resetForm() {
     document.getElementById('contactName').value = '';
     document.getElementById('contactEmail').value = '';
     document.getElementById('contactMessage').value = '';
     document.getElementById('checkbox').checked = false;
-    enableMsgButton(); // Button wieder deaktivieren
+
+    isFormValid = false;
+    enableMsgButton();
 }
