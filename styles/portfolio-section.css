@@ -193,9 +193,18 @@
 
 .blue-shadow {
     position: absolute;
-    bottom: 35%;
+    bottom: 60%;
     right: -350px;
     width: 740px;
     height: 800px;
+    z-index: -1;
+}
+
+.green-shadow {
+    position: absolute;
+    top: 57%;
+    left: -514px;
+    width: 800px;
+    height: 870px;
     z-index: -1;
 }

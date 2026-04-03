@@ -9,6 +9,7 @@ footer {
     line-height: 120%;
     border-top: 4px solid #70e71a;
     background-color: #141D2F;
+    z-index: 1;
 }
 
 .footer-content {
