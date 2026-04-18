@@ -240,7 +240,6 @@ input::placeholder {
 
 .send-message-button:disabled {
     background-color: #B6B6B6;
-    cursor: not-allowed;
 }
 
 @keyframes fadeIn {
