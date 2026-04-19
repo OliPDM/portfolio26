@@ -1,0 +1,43 @@
+.main-content {
+    height: 63%;
+    margin-top: 109px;
+    background-color: #141D2F;
+
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    line-height: 120%;
+    gap: 25px;
+    margin-top: 96px;
+}
+
+h1 {
+    font-size: 61px;
+    color: #70e61c;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+h2 {
+    font-size: 33px;
+    color: #9747FF;
+    font-weight: 700;
+    line-height: 120%;
+}
+
+.first-header-line {
+    width: 130px;
+    height: 3px;
+}
+
+.second-header-line {
+    width: 500px;
+    height: 3px;
+}
+
+.content {
+    margin: 121px 204px;
+}
