@@ -63,10 +63,13 @@
     transform: scale(1.15);
 }
 
+.landing-section-link-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .links {
-    position: absolute;
-    bottom: 40px;
-    left: 0;
     display: flex;
     align-items: center;
     gap: 42px;
@@ -96,9 +99,6 @@
     gap: 16px;
     font-size: 23px;
     line-height: 120%;
-    position: absolute;
-    bottom: 120px;
-    right: 0px;
     transform: rotate(90deg);
     transform-origin: center;
 }

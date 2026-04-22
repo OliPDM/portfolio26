@@ -10,7 +10,7 @@ const translations = {
         'landing.name': 'Oliver Geschine',
         'landing.role': 'FRONTEND ENTWICKLER',
         'landing.cta': 'Lass uns sprechen!',
-        'landing.scroll': 'Nach unten scrollen',
+        'landing.scroll': 'scroll weiter',
 
         // About Me
         'about.title': 'Über mich',
@@ -56,7 +56,7 @@ const translations = {
         'landing.name': 'Oliver Geschine',
         'landing.role': 'FRONTEND DEVELOPER',
         'landing.cta': 'Let\'s talk!',
-        'landing.scroll': 'Scroll down',
+        'landing.scroll': 'scroll down',
 
         // About Me
         'about.title': 'About Me',

@@ -32,17 +32,17 @@ function translatePage(lang) {
             element.placeholder = translation;
         }
     });
-    translateSpecialElements(lang);
+    // translateSpecialElements(lang);
 }
 
-function translateSpecialElements(lang) {
-    const lookingSpan = document.querySelector('.h2_container h2');
-    const anotherSpan = document.querySelector('.h2_container .purple-span');
-    const questionSpan = document.querySelector('.h2_container span:last-child');
-    if (lookingSpan) lookingSpan.textContent = translations[lang]['skills.looking'];
-    if (anotherSpan) anotherSpan.textContent = translations[lang]['skills.another'];
-    if (questionSpan) questionSpan.textContent = translations[lang]['skills.question'];
-}
+// function translateSpecialElements(lang) {
+//     const lookingSpan = document.querySelector('.h2_container h2');
+//     const anotherSpan = document.querySelector('.h2_container .purple-span');
+//     const questionSpan = document.querySelector('.h2_container span:last-child');
+//     if (lookingSpan) lookingSpan.textContent = translations[lang]['skills.looking'];
+//     if (anotherSpan) anotherSpan.textContent = translations[lang]['skills.another'];
+//     if (questionSpan) questionSpan.textContent = translations[lang]['skills.question'];
+// }
 
 // Sprache aus URL laden: mysite.com?lang=de
 function initLanguageFromURL() {
