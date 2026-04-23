@@ -112,11 +112,7 @@
                 <div class="short_info_container">
                     <div class="short_info">
                         <img class="about_me_icons" src="./assets/icons/location_icon.png" alt="">
-                        <span>
-                            I'm located in Potsdam, near Berlin. <br>
-                            I like the thought of working in different teams, whether from home or face to face at the
-                            office.
-                            I'm also open to move to a new city for the right opportunity.
+                        <span data-translate="about.location">
                         </span>
                     </div>
                     <div class="short_info">
@@ -204,28 +200,22 @@
 
                 <div class="skills_infobox">
                     <div class="skills_headline_container">
-                        <h1>Skills</h1>
+                        <h1 data-translate="skills.title">Skills</h1>
                         <img class="blue_line" src="./assets/icons/blue_line.png" alt="">
                     </div>
 
-                    <span class="skills_infobox_span">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto excepturi architecto tempore
-                        adipisci,
-                        praesentium quia nemo et vel molestiae error cupiditate, alias, labore voluptatibus officia.
-                        Deserunt
-                        rerum
-                        officia provident nam!
+                    <span data-translate="skills.intro" class="skills_infobox_span">
+
                     </span>
                     <div class="h2_container">
-                        <p>Looking for <span data-translate="skills.another" class="purple-span">another skill</span> ?
-                        </p>
+                        <p data-translate="skills.looking"></p>
+                        <span data-translate="skills.another" class="purple-span">another skill</span>
+                        <p data-translate="skills.question">?</p>
+
                         <!-- <h2>Looking for</h2><span class="purple-span">another skill</span><span>?</span> -->
                     </div>
-                    <span class="skills_infobox_span">New frameworks excite me because they open doors to fresh
-                        possibilities and creative solutions.
-                        I believe the best developers are those who never stop learning and adapting to technology's
-                        evolution.</span>
-                    <a href="#contact" class="skills-section-button">Let's talk!</a>
+                    <span data-translate="skills.description" class="skills_infobox_span"></span>
+                    <a href="#contact" class="skills-section-button" data-translate="skills.cta"></a>
                 </div>
             </div>
         </section>
@@ -236,11 +226,9 @@
             <div class="project-headline-wrapper">
                 <div class="headline_container">
                     <img src="./assets/icons/purple_line.png" alt="">
-                    <h1>Portfolio</h1>
+                    <h1 data-translate="portfolio.title">Portfolio</h1>
                 </div>
-                <span class="headline_span">
-                    Explore a selection of my work here - Interact with projects to see my skills in action.
-                </span>
+                <span data-translate="portfolio.description" class="headline_span"></span>
             </div>
 
             <div id="projectList" class="project-wrapper"></div>
@@ -287,13 +275,13 @@
         <section id="contact" class="contact-section">
 
             <div class="contact-headline-container">
-                <h1>Contact</h1>
+                <h1 data-translate="contact.title">Contact</h1>
                 <img src="./assets/icons/green_line.png" alt="">
             </div>
             <div class="contact-content-container">
                 <div class="contact-content-wrapper">
                     <div class="contact-content-headline-container">
-                        <img src="./assets/icons/blue_line.png" alt="">
+                        <img class="contact-content-img" src="./assets/icons/blue_line.png" alt="">
                         <h2>Got a problem to solve?</h2>
                     </div>
                     <div class="contact-content-span-container">
@@ -305,30 +293,39 @@
                 </div>
                 <div class="contact-input-container">
                     <div class="inputFieldWrapper">
-                        <input class="inputFields" type="text" placeholder="Your name" id="contactName" required>
+                        <input class="inputFields" type="text" placeholder="Your name" id="contactName"
+                            data-translate="contact.name.placeholder" required>
                         <img class="inputIcon" src="./assets/icons/error.png" alt="Error">
-                        <span id="namePlaceholderError" class="errorMsg">Placeholder</span>
-                        <div id="nameError" class="inputError dNone">Fehlertext</div>
+                        <span id="namePlaceholderError" class="errorMsg"
+                            data-translate="contact.name.error">Placeholder</span>
+                        <div id="nameError" class="inputError dNone" data-translate="contact.name.errorText">Fehlertext
+                        </div>
                     </div>
                     <div class="inputFieldWrapper">
-                        <input class="inputFields" type="email" placeholder="Your email" id="contactEmail" required>
+                        <input class="inputFields" type="email" placeholder="Your email" id="contactEmail"
+                            data-translate="contact.email.placeholder" required>
                         <img class="inputIcon" src="./assets/icons/error.png" alt="Error">
-                        <span id="emailPlaceholderError" class="errorMsg">Placeholder</span>
-                        <div id="emailError" class="inputError dNone">Fehlertext</div>
+                        <span id="emailPlaceholderError" class="errorMsg"
+                            data-translate="contact.email.error">Placeholder</span>
+                        <div id="emailError" class="inputError dNone" data-translate="contact.email.errorText">
+                            Fehlertext</div>
                     </div>
                     <div class="inputFieldWrapper">
                         <textarea class="inputFields contact-message" placeholder="Your message" id="contactMessage"
-                            required></textarea>
+                            data-translate="contact.message.placeholder" required></textarea>
                         <img class="inputIcon" src="./assets/icons/error.png" alt="Error">
-                        <span id="messagePlaceholderError" class="errorMsg">Placeholder</span>
-                        <div id="messageError" class="inputError dNone">Fehlertext</div>
+                        <span id="messagePlaceholderError" class="errorMsg"
+                            data-translate="contact.message.error">Placeholder</span>
+                        <div id="messageError" class="inputError dNone" data-translate="contact.message.errorText">
+                            Fehlertext</div>
                     </div>
                     <div class="checkbox-container">
                         <div id="checkbox" type="checkbox" class="checkbox-icon-container"></div>
                         <span> I've read the privacy policy and agree to the processing of my data as outlined.</span>
                         <span class="error-message">Please accept the privacy policy.</span>
                     </div>
-                    <button id="sendMessageButton" class="send-message-button" disabled>Send message</button>
+                    <button id="sendMessageButton" class="send-message-button" data-translate="contact.send"
+                        disabled>Send message</button>
                     <a id="up_arrow" class="arrow" href="#landing_page"></a>
                 </div>
             </div>

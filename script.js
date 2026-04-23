@@ -17,7 +17,6 @@ function setLanguageEN() {
 }
 
 function translatePage(lang) {
-    console.log(`Language set to: ${lang}`);
     document.querySelectorAll('[data-translate]').forEach(element => {
         const key = element.getAttribute('data-translate');
         const translation = translations[lang]?.[key];
@@ -32,17 +31,7 @@ function translatePage(lang) {
             element.placeholder = translation;
         }
     });
-    // translateSpecialElements(lang);
 }
-
-// function translateSpecialElements(lang) {
-//     const lookingSpan = document.querySelector('.h2_container h2');
-//     const anotherSpan = document.querySelector('.h2_container .purple-span');
-//     const questionSpan = document.querySelector('.h2_container span:last-child');
-//     if (lookingSpan) lookingSpan.textContent = translations[lang]['skills.looking'];
-//     if (anotherSpan) anotherSpan.textContent = translations[lang]['skills.another'];
-//     if (questionSpan) questionSpan.textContent = translations[lang]['skills.question'];
-// }
 
 // Sprache aus URL laden: mysite.com?lang=de
 function initLanguageFromURL() {

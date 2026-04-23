@@ -15,17 +15,18 @@ const translations = {
         // About Me
         'about.title': 'Über mich',
         'about.intro': 'Hallo, ich bin Oliver, ein frischer Software-Developer-Verstand, der gerade gestartet ist!<br>Schön, dich hier zu treffen. Das ist der erste Schritt für uns, gemeinsam großartige Dinge zu schaffen.',
-        'about.location': 'Ich lebe in Potsdam, in der Nähe von Berlin.<br>Ich mag den Gedanken, in verschiedenen Teams zu arbeiten, ob von zu Hause oder persönlich im Büro.<br>Ich bin auch offen dafür, für die richtige Gelegenheit in eine neue Stadt zu ziehen.',
+        'about.location': 'Ich lebe in Potsdam, in der Nähe von Berlin.<br>Ich mag den Gedanken, in verschiedenen Teams zu arbeiten, ob von zu Hause oder im Büro.<br>Ich kann mir durchaus vorstellen, für die richtige Gelegenheit in eine neue Stadt zu ziehen.',
         'about.learning': 'Mir gefällt die Tatsache, dass jedes neue Projekt etwas zum Lernen und Verbessern bietet.',
         'about.problem': 'Meistens versuche ich, einen kreativen Weg zur Problemlösung zu finden, aber ich arbeite auch gerne mit anderen zusammen, um die beste Lösung zu finden.',
 
         // Skills
-        'skills.title': 'Fähigkeiten',
+        'skills.title': 'Skills',
+        'skills.intro': 'Während meiner Weiterbildung in der Developer Akademie konnte ich bereits Erfahrungen in verschiedensten Projekten und unterschiedlichen Frontend Technologien (z.B. HTML, CSS, Javascript) sammeln. Dies hat mir gezeigt, wie wichtig es ist, sich stetig weiterzuentwickeln und neue Fähigkeiten im Bereich der IT anzueignen.',
         'skills.looking': 'Suchst du nach',
         'skills.another': 'einer anderen Fähigkeit',
         'skills.question': '?',
-        'skills.description': 'Neue Frameworks begeistern mich, weil sie Türen zu neuen Möglichkeiten und kreativen Lösungen öffnen. Ich glaube, die besten Entwickler sind diejenigen, die niemals aufhören zu lernen und sich an die Entwicklung der Technologie anzupassen.',
-        'skills.cta': 'Lass uns sprechen!',
+        'skills.description': 'Ich finde die Vielfalt an Entwicklungsmöglichkeiten in der IT unheimlich spannend und freue mich darauf, im Laufe der Zeit, viele neue Techniken zu erlernen, um stetig als Entwickler zu wachsen.',
+        'skills.cta': 'Nimm Kontakt auf!',
 
         // Portfolio
         'portfolio.title': 'Portfolio',
@@ -67,11 +68,12 @@ const translations = {
 
         // Skills
         'skills.title': 'Skills',
+        'skills.intro': 'During my training at the Developer Akademie, I was able to gain experience in a wide range of projects and various frontend technologies (e.g., HTML, CSS, JavaScript). This showed me how important it is to continuously develop and acquire new skills in the field of IT.',
         'skills.looking': 'Looking for',
         'skills.another': 'another skill',
         'skills.question': '?',
-        'skills.description': 'New frameworks excite me because they open doors to fresh possibilities and creative solutions. I believe the best developers are those who never stop learning and adapting to technology\'s evolution.',
-        'skills.cta': 'Let\'s talk!',
+        'skills.description': 'I find the variety of development opportunities in IT incredibly exciting and look forward to learning many new techniques over time in order to continuously grow as a developer.',
+        'skills.cta': 'Get in touch!',
 
         // Portfolio
         'portfolio.title': 'Portfolio',
