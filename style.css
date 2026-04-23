@@ -33,6 +33,7 @@ body {
     align-items: center;
     position: absolute;
     overflow: hidden;
+    background-color: #141D2F;
 }
 
 .dNone {
