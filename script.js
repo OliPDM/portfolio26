@@ -64,9 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.getElementById(scrollTarget);
             if (targetElement) {
                 targetElement.scrollIntoView({ behavior: 'smooth' });
-                console.log('Scrolled to:', scrollTarget);
-            } else {
-                console.log('Element not found:', scrollTarget);
             }
         }, 300);
     }

@@ -22,7 +22,7 @@
 
 <body>
 
-    <div class="content-wrapper">
+    <div class="content-wrapper" id="legal">
 
         <nav>
             <h1>
@@ -34,15 +34,18 @@
             <div class="navigation-bar">
                 <div class="navigation-links-container">
                     <div class="navigations-links">
-                        <a href="#about_me" onclick="setActiveNav(this)" data-translate="nav.about">About me</a>
+                        <a onclick="window.location.href='./index.html?scrollTo=about_me'" onclick="setActiveNav(this)"
+                            data-translate="nav.about">About me</a>
                         <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
                     </div>
                     <div class="navigations-links">
-                        <a href="#skills" onclick="setActiveNav(this)" data-translate="nav.skills">Skills</a>
+                        <a onclick="window.location.href='./index.html?scrollTo=skills'" onclick="setActiveNav(this)"
+                            data-translate="nav.skills">Skills</a>
                         <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
                     </div>
                     <div class="navigations-links">
-                        <a href="#portfolio" onclick="setActiveNav(this)" data-translate="nav.portfolio">Portfolio</a>
+                        <a onclick="window.location.href='./index.html?scrollTo=portfolio'" onclick="setActiveNav(this)"
+                            data-translate="nav.portfolio">Portfolio</a>
                         <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
                     </div>
                 </div>
@@ -136,7 +139,7 @@
         </div>
         <footer>
             <div class="footer-content">
-                <a class="footer-name" href="#landing_page">
+                <a class="footer-name" onclick="window.location.href='./index.html'">
                     <span>Ol</span><span class="purple-dot">i</span><span>ve</span><span class="green-r">r</span>
                 </a>
                 <div>
@@ -152,7 +155,8 @@
                 </div>
             </div>
             <div class="footer-legal-notice-container">
-                <div class="legal-notice" onclick="window.location.href='./legal_notice.html'">Legal Notice</div>
+                <a class="legal-notice" href="#legal">Legal
+                    Notice</a>
                 <img class="footer-legal-notice-img" src="./assets/icons/green_line.png" alt="">
             </div>
 

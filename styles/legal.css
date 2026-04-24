@@ -59,3 +59,8 @@ p {
 span {
     color: #9747FF;
 }
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
