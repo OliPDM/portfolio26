@@ -1,19 +1,26 @@
+function init() {
+    renderProjects(),
+        renderComments(),
+        initContactForm(),
+        includeHTML()
+}
+
 /////// side translation ///////
 let currentLanguage = 'en';
 
 function setLanguageDE() {
     currentLanguage = 'de';
     translatePage('de');
-    document.getElementById('de_active')?.classList.add('active');
-    document.getElementById('en_active')?.classList.remove('active');
+    document.getElementById('de_button')?.classList.add('active');
+    document.getElementById('en_button')?.classList.remove('active');
 }
 
 function setLanguageEN() {
     currentLanguage = 'en';
     localStorage.setItem('preferredLanguage', 'en');
     translatePage('en');
-    document.getElementById('en_active')?.classList.add('active');
-    document.getElementById('de_active')?.classList.remove('active');
+    document.getElementById('en_button')?.classList.add('active');
+    document.getElementById('de_button')?.classList.remove('active');
 }
 
 function translatePage(lang) {
@@ -45,8 +52,8 @@ function initLanguageFromURL() {
 }
 
 function updateLanguageButtons(activeLang) {
-    document.getElementById('de_active')?.classList.remove('active');
-    document.getElementById('en_active')?.classList.remove('active');
+    document.getElementById('de_active')?.classList.remove('dNone');
+    document.getElementById('en_active')?.classList.remove('dNone');
     document.getElementById(`${activeLang}_active`)?.classList.add('active');
 }
 
