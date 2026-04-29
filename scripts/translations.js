@@ -7,7 +7,6 @@ const translations = {
 
         // Landing Section
         'landing.iam': 'Ich bin',
-        'landing.name': 'Oliver Geschine',
         'landing.role': 'FRONTEND ENTWICKLER',
         'landing.cta': 'Lass uns sprechen!',
         'landing.scroll': 'scroll weiter',
@@ -37,8 +36,9 @@ const translations = {
 
         // Contact
         'contact.title': 'Kontakt',
-        'contact.problem': 'Hast du ein Problem zu lösen?',
-        'contact.need': 'Brauchst du einen Frontend-Entwickler? Kontaktiere mich!',
+        'contact.problem': 'Soll ein Problem gelöst werden?',
+        'contact.message': 'Wenn kreative Ansätze und innovative Ideen für die Umsetzung ihrer Projekte gefragt sind, zögern Sie nicht, mich zu kontaktieren. Ich freue mich, bald von Ihnen zu hören.',
+        'contact.need': 'Auf der Suche nach einem Frontend-Entwickler?<br>Schreiben Sie mir!',
         'contact.name.placeholder': 'Dein Name',
         'contact.email.placeholder': 'Deine E-Mail',
         'contact.message.placeholder': 'Deine Nachricht',
@@ -88,7 +88,8 @@ const translations = {
         // Contact
         'contact.title': 'Contact',
         'contact.problem': 'Got a problem to solve?',
-        'contact.need': 'Need a Frontend developer? Contact me!',
+        'contact.message': 'If creative approaches and innovative ideas for the implementation of your projects are needed, don\'t hesitate to contact me. I look forward to hearing from you soon.',
+        'contact.need': 'Need a Frontend developer?<br>Contact me!',
         'contact.name.placeholder': 'Your name',
         'contact.email.placeholder': 'Your email',
         'contact.message.placeholder': 'Your message',
