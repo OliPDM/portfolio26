@@ -11,6 +11,7 @@ let currentLanguage = 'en';
 function setLanguageDE() {
     currentLanguage = 'de';
     translatePage('de');
+    renderComments();
     document.getElementById('de_button')?.classList.add('active');
     document.getElementById('en_button')?.classList.remove('active');
 }
@@ -19,6 +20,7 @@ function setLanguageEN() {
     currentLanguage = 'en';
     localStorage.setItem('preferredLanguage', 'en');
     translatePage('en');
+    renderComments();
     document.getElementById('en_button')?.classList.add('active');
     document.getElementById('de_button')?.classList.remove('active');
 }

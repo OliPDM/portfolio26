@@ -34,6 +34,12 @@ const translations = {
         'portfolio.project2.description': 'Task-Manager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu.',
         'portfolio.project3.description': 'Eine Pokédex-Anwendung, die es Benutzern ermöglicht, nach verschiedenen Pokémon zu suchen und Details anzuzeigen.',
 
+        // Comments
+        'comments.comment1.comment': 'Die Zusammenarbeit mit Oliver ist durchweg angenehm und professionell. Sein technisches Verständnis und seine Hilfsbereitschaft machen ihn zu einem geschätzten Kollegen.',
+        'comments.comment2.comment': 'Die Zusammenarbeit ist jederzeit konstruktiv und effizient.',
+        'comments.comment3.comment': 'Er ist ein engagierter Teamplayer mit ausgeprägten Fähigkeiten in der Softwareentwicklung. Seine analytische Denkweise hilft dabei, Probleme schnell zu identifizieren und nachhaltige Lösungen zu entwickeln. Zudem trägt er durch seine offene Kommunikation zu einem positiven Arbeitsklima bei.',
+        'comments.position': 'Software Tester',
+
         // Contact
         'contact.title': 'Kontakt',
         'contact.problem': 'Soll ein Problem gelöst werden?',
@@ -84,6 +90,12 @@ const translations = {
         'portfolio.project1.description': 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
         'portfolio.project2.description': 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
         'portfolio.project3.description': 'A Pokédex application that allows users to search and view details of various Pokémon.',
+
+        // Comments
+        'comments.comment1.comment': 'Working with Oliver is consistently pleasant and professional. His technical expertise and willingness to help make him a highly valued colleague.',
+        'comments.comment2.comment': 'Collaboration is always constructive and efficient.',
+        'comments.comment3.comment': 'He is a dedicated team player with strong software development skills. His analytical thinking helps identify problems quickly and develop sustainable solutions. Additionally, his open communication contributes to a positive work environment.',
+        'comments.position': 'Software Tester',
 
         // Contact
         'contact.title': 'Contact',

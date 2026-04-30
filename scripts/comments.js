@@ -23,21 +23,18 @@ let currentCommentCount = 0;
 
 function renderComments() {
     const commentImg = document.getElementById('comment_img');
-
-    // Scale + Fade-out Effekt
     commentImg.classList.add('transition-out');
-
     setTimeout(() => {
-        // Content während der Transition ändern
-        document.getElementById('comment').innerHTML = comments[currentCommentCount].comment;
+        const currentLang = currentLanguage || 'en';
+        const commentKey = `comments.comment${currentCommentCount + 1}.comment`;
+        const translatedComment = translations[currentLang]?.[commentKey] || comments[currentCommentCount].comment;
+        const translatedPosition = translations[currentLang]?.['comments.position'] || comments[currentCommentCount].position;
+        document.getElementById('comment').innerHTML = translatedComment;
         document.getElementById('name').innerHTML = comments[currentCommentCount].name;
-        document.getElementById('position').innerHTML = comments[currentCommentCount].position;
+        document.getElementById('position').innerHTML = translatedPosition;
         commentImg.src = comments[currentCommentCount].profile_img;
-
-        // Scale + Fade-in Effekt
         commentImg.classList.remove('transition-out');
     }, 150);
-
     updateNavigationDots();
 }
 
