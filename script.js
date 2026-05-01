@@ -11,7 +11,9 @@ let currentLanguage = 'en';
 function setLanguageDE() {
     currentLanguage = 'de';
     translatePage('de');
-    renderComments();
+    if (document.getElementById('comment_img')) {
+        renderComments();
+    }
     document.getElementById('de_button')?.classList.add('active');
     document.getElementById('en_button')?.classList.remove('active');
 }
@@ -20,7 +22,9 @@ function setLanguageEN() {
     currentLanguage = 'en';
     localStorage.setItem('preferredLanguage', 'en');
     translatePage('en');
-    renderComments();
+    if (document.getElementById('comment_img')) {
+        renderComments();
+    }
     document.getElementById('en_button')?.classList.add('active');
     document.getElementById('de_button')?.classList.remove('active');
 }

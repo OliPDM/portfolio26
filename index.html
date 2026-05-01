@@ -316,8 +316,13 @@
                     </div>
                     <div class="checkbox-container">
                         <div id="checkbox" type="checkbox" class="checkbox-icon-container"></div>
-                        <span data-translate="contact.privacy">I've read the privacy policy and agree to the processing
-                            of my data as outlined.</span>
+                        <p>
+                            <span data-translate="contact.privacy.before">I've read the</span>
+                            <span class="privacy-policy" data-translate="contact.privacy.link"
+                                onclick="window.location.href='./privacy_policy.html'">privacy policy</span>
+                            <span data-translate="contact.privacy.after">and agree to the processing of my data as
+                                outlined.</span>
+                        </p>
                         <span class="error-message" data-translate="contact.privacy.error">Please accept the privacy
                             policy.</span>
                     </div>

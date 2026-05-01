@@ -48,7 +48,9 @@ const translations = {
         'contact.name.placeholder': 'Dein Name',
         'contact.email.placeholder': 'Deine E-Mail',
         'contact.message.placeholder': 'Deine Nachricht',
-        'contact.privacy': 'Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.',
+        'contact.privacy.before': 'Ich habe die',
+        'contact.privacy.link': 'Datenschutzerklärung',
+        'contact.privacy.after': 'gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.',
         'contact.send': 'Nachricht senden',
 
         // Footer
@@ -105,7 +107,9 @@ const translations = {
         'contact.name.placeholder': 'Your name',
         'contact.email.placeholder': 'Your email',
         'contact.message.placeholder': 'Your message',
-        'contact.privacy': 'I\'ve read the privacy policy and agree to the processing of my data as outlined.',
+        'contact.privacy.before': 'I\'ve read the',
+        'contact.privacy.link': 'privacy policy',
+        'contact.privacy.after': 'and agree to the processing of my data as outlined.',
         'contact.send': 'Send message',
 
         // Footer

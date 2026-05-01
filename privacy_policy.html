@@ -14,6 +14,7 @@
     <script src="./scripts/navbar.js"></script>
     <script src="./scripts/includeHTML.js"></script>
     <script src="./scripts/translations.js"></script>
+    <script src="./scripts/comments.js"></script>
     <script src="script.js"></script>
 
 
@@ -25,7 +26,7 @@
 
         <nav>
             <h1>
-                <a href="#landing_page">
+                <a onclick="window.location.href='./index.html'">
                     <span>Ol</span><span class="purple-dot">i</span><span>ve</span><span class="green-r">r</span>
                 </a>
             </h1>
@@ -33,15 +34,18 @@
             <div class="navigation-bar">
                 <div class="navigation-links-container">
                     <div class="navigations-links">
-                        <a href="#about_me" onclick="setActiveNav(this)" data-translate="nav.about">About me</a>
+                        <a onclick="window.location.href='./index.html?scrollTo=about_me'" onclick="setActiveNav(this)"
+                            data-translate="nav.about">About me</a>
                         <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
                     </div>
                     <div class="navigations-links">
-                        <a href="#skills" onclick="setActiveNav(this)" data-translate="nav.skills">Skills</a>
+                        <a onclick="window.location.href='./index.html?scrollTo=skills'" onclick="setActiveNav(this)"
+                            data-translate="nav.skills">Skills</a>
                         <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
                     </div>
                     <div class="navigations-links">
-                        <a href="#portfolio" onclick="setActiveNav(this)" data-translate="nav.portfolio">Portfolio</a>
+                        <a onclick="window.location.href='./index.html?scrollTo=portfolio'" onclick="setActiveNav(this)"
+                            data-translate="nav.portfolio">Portfolio</a>
                         <img class="navigation-links-img dNone" src="./assets/icons/purple_line.png" alt="">
                     </div>
                 </div>
