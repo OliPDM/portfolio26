@@ -4,6 +4,7 @@
     align-items: center;
     gap: 60px;
     background-color: #141D2F;
+    height: 885px;
 }
 
 .skills-content {
@@ -13,12 +14,6 @@
     width: 100%;
     gap: 200px;
     padding-top: 50px;
-}
-
-.vector-bg-img {
-    width: 100%;
-    bottom: 130px;
-    position: relative;
 }
 
 .skills-overview {

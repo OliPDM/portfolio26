@@ -21,6 +21,13 @@
     width: 470px;
 }
 
+.vector-bg-img {
+    width: 100%;
+    position: absolute;
+    top: 1600px;
+    z-index: 0;
+}
+
 .profile_picture_container {
     display: flex;
     justify-content: center;
@@ -33,6 +40,7 @@
     width: 520px;
     height: 640px;
     border-radius: 20px;
+    z-index: 1;
 }
 
 .placeholder_span {
