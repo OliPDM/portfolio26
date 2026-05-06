@@ -156,3 +156,56 @@ body {
     font-weight: 900;
     font-style: italic;
 }
+
+/* --- Modal --- */
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 109px;
+    width: 309px;
+    height: 852px;
+    background-color: #414857;
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 114px;
+    height: 272px;
+    gap: 29px;
+}
+
+.modal-content a {
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+}
+
+.modal-language-container {
+    display: flex;
+    align-items: center;
+    line-height: 120%;
+}
+
+.language-button-modal {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 18px;
+    line-height: 120%;
+    font-weight: 400;
+    width: 40px;
+    height: 32px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.language-button-modal.active {
+    color: #70e71a;
+    font-weight: 700;
+}

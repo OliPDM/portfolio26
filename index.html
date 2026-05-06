@@ -61,6 +61,26 @@
                     <button class="language-button dNone" id="en_active">EN</button>
                 </div>
 
+                <img id="burger_menu" class="burger-menu dNone" src="./assets/icons/burger_menu.png" alt="Burger Menu">
+
+            </div>
+
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <a href="#about_me" onclick="setActiveNav(this)" data-translate="nav.about">About me</a>
+                    <a href="#skills" onclick="setActiveNav(this)" data-translate="nav.skills">Skills</a>
+                    <a href="#portfolio" onclick="setActiveNav(this)" data-translate="nav.portfolio">Portfolio</a>
+                    <a href="#contact" onclick="setActiveNav(this)" data-translate="nav.contact">Contact</a>
+                    <div class="modal-language-container">
+                        <button class="language-button-modal" id="de_button_modal"
+                            onclick="setLanguageDEModal()">DE</button>
+                        <button class="language-button-modal dNone" id="de_active_modal">DE</button>
+                        <p>/</p>
+                        <button class="language-button-modal" id="en_button_modal"
+                            onclick="setLanguageENModal()">EN</button>
+                        <button class="language-button-modal dNone" id="en_active_modal">EN</button>
+                    </div>
+                </div>
             </div>
 
         </nav>

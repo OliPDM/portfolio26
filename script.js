@@ -10,6 +10,7 @@ let currentLanguage = 'en';
 
 function setLanguageDE() {
     currentLanguage = 'de';
+    localStorage.setItem('preferredLanguage', 'de');
     translatePage('de');
     if (document.getElementById('comment_img')) {
         renderComments();
@@ -46,29 +47,20 @@ function translatePage(lang) {
     });
 }
 
-// Sprache aus URL laden: mysite.com?lang=de
-function initLanguageFromURL() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const lang = urlParams.get('lang') || 'en';
-    if (lang === 'en') {
-        setLanguageEN();
-    } else {
-        setLanguageDE();
-    }
-}
-
-function updateLanguageButtons(activeLang) {
-    document.getElementById('de_active')?.classList.remove('dNone');
-    document.getElementById('en_active')?.classList.remove('dNone');
-    document.getElementById(`${activeLang}_active`)?.classList.add('active');
-}
+// function updateLanguageButtons(activeLang) {
+//     document.getElementById('de_active')?.classList.remove('dNone');
+//     document.getElementById('en_active')?.classList.remove('dNone');
+//     document.getElementById(`${activeLang}_active`)?.classList.add('active');
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLanguage') || 'de';
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
     if (savedLang === 'en') {
         setLanguageEN();
+        setLanguageENModal();
     } else {
         setLanguageDE();
+        setLanguageDEModal();
     }
     const urlParams = new URLSearchParams(window.location.search);
     const scrollTarget = urlParams.get('scrollTo');
@@ -81,3 +73,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     }
 });
+
+
+/////// Modal ///////
+
+function setLanguageDEModal() {
+    currentLanguage = 'de';
+    localStorage.setItem('preferredLanguage', 'de');
+    translatePage('de');
+    if (document.getElementById('comment_img')) {
+        renderComments();
+    }
+    document.getElementById('de_button_modal')?.classList.add('active');
+    document.getElementById('en_button_modal')?.classList.remove('active');
+}
+
+function setLanguageENModal() {
+    currentLanguage = 'en';
+    localStorage.setItem('preferredLanguage', 'en');
+    translatePage('en');
+    if (document.getElementById('comment_img')) {
+        renderComments();
+    }
+    document.getElementById('en_button_modal')?.classList.add('active');
+    document.getElementById('de_button_modal')?.classList.remove('active');
+}
