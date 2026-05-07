@@ -14,18 +14,43 @@
     margin-top: 96px;
 }
 
-h1 {
+.privacy-h1 {
     font-size: 61px;
     color: #70e61c;
     font-weight: 700;
     line-height: 120%;
 }
 
-h2 {
+.privacy-h2 {
     font-size: 33px;
     color: #9747FF;
     font-weight: 700;
     line-height: 120%;
+}
+
+.privacy-h3 {
+    font-size: 22px;
+    color: white;
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.privacy-h4 {
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    line-height: 120%;
+    text-decoration: underline;
+}
+
+.privacy-p {
+    font-size: 16px;
+}
+
+.privacy-a {
+    font-size: 16px;
+    color: #9747FF;
+    text-decoration: none;
 }
 
 .first-header-line {

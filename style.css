@@ -36,7 +36,7 @@ body {
     background-color: #141D2F;
 }
 
-.inlude-footer {
+.inlude-html {
     width: 100%;
 }
 
@@ -173,7 +173,6 @@ body {
 .modal-content {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
     width: 114px;
     height: 272px;
@@ -184,6 +183,10 @@ body {
     font-size: 22px;
     text-decoration: none;
     color: white;
+}
+
+.modal-content a:hover {
+    color: #70e71a;
 }
 
 .modal-language-container {
@@ -203,6 +206,10 @@ body {
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+.language-button-modal:hover {
+    color: #70e71a;
 }
 
 .language-button-modal.active {

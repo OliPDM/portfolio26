@@ -47,12 +47,6 @@ function translatePage(lang) {
     });
 }
 
-// function updateLanguageButtons(activeLang) {
-//     document.getElementById('de_active')?.classList.remove('dNone');
-//     document.getElementById('en_active')?.classList.remove('dNone');
-//     document.getElementById(`${activeLang}_active`)?.classList.add('active');
-// }
-
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLanguage') || 'en';
     if (savedLang === 'en') {
