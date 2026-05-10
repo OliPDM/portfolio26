@@ -48,14 +48,7 @@ function translatePage(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-    if (savedLang === 'en') {
-        setLanguageEN();
-        setLanguageENModal();
-    } else {
-        setLanguageDE();
-        setLanguageDEModal();
-    }
+    getActiveLanguage();
     const urlParams = new URLSearchParams(window.location.search);
     const scrollTarget = urlParams.get('scrollTo');
     if (scrollTarget) {
@@ -67,6 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
     }
 });
+
+function getActiveLanguage() {
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+    if (savedLang === 'en') {
+        setLanguageEN();
+        setLanguageENModal();
+    } else {
+        setLanguageDE();
+        setLanguageDEModal();
+    }
+}
 
 
 /////// Modal ///////
