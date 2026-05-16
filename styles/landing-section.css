@@ -74,7 +74,6 @@
     width: 100%;
     position: absolute;
     bottom: clamp(40px, 8vh, 100px);
-    padding: 0 20px;
 }
 
 .links {
@@ -131,16 +130,16 @@
 
 .landing-section-shadows img:first-child {
     position: absolute;
-    top: 15%;
-    left: -350px;
+    top: 12%;
+    left: clamp(-500px, calc(-85vw / 3), -185px);
     width: clamp(400px, 60vw, 800px);
     height: clamp(400px, 60vw, 800px);
 }
 
 .landing-section-shadows img:nth-child(2) {
     position: absolute;
-    top: 50%;
-    right: -500px;
+    top: 60%;
+    right: clamp(-435px, calc(-85vw / 2.5), -230px);
     transform: translateY(-50%);
     width: clamp(400px, 60vw, 800px);
     height: clamp(400px, 60vw, 800px);
@@ -192,19 +191,6 @@
 
     .headlines {
         gap: 4px;
-    }
-
-    .landing-section-button {
-        width: 100%;
-        max-width: 280px;
-    }
-
-    .landing-section-shadows img:first-child {
-        left: -250px;
-    }
-
-    .landing-section-shadows img:nth-child(2) {
-        right: -250px;
     }
 }
 
