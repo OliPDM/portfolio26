@@ -108,3 +108,86 @@ nav {
 .green-r {
     color: #70e71a;
 }
+
+/* --- Modal --- */
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 109px;
+    right: 0;
+    width: 309px;
+    height: calc(100vh - 109px);
+    background-color: #414857;
+    transform: translateY(-121%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 98;
+}
+
+.modal.show {
+    transform: translateY(0);
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 114px;
+    height: 272px;
+    gap: 29px;
+}
+
+.modal-content a {
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+}
+
+.modal-content a:hover {
+    color: #70e71a;
+}
+
+.modal-language-container {
+    display: flex;
+    align-items: center;
+    line-height: 120%;
+}
+
+.language-button-modal {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    font-size: 18px;
+    line-height: 120%;
+    font-weight: 400;
+    width: 40px;
+    height: 32px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.language-button-modal:hover {
+    color: #70e71a;
+}
+
+.language-button-modal.active {
+    color: #70e71a;
+    font-weight: 700;
+}
+
+
+@media(max-width: 768px) {
+    .navigation-links-container {
+        display: none;
+    }
+
+    .change_language_container {
+        display: none;
+    }
+
+    .burger-menu {
+        display: flex;
+        cursor: pointer;
+    }
+}

@@ -38,7 +38,7 @@ function renderProjects() {
             <div id="img">
                 <img id="projectImg" class="project-container-img" src="${project.img}" alt="">
             </div>
-            <div class="overlay dNone">
+            <div class="overlay dNonePortfolio">
                 <div class="button_container">
                     <a class="git_button" href="${project.github}" target="_blank">Github</a>
                     <a class="live_button" href="${project.live}" target="_blank">Live test</a>
@@ -58,12 +58,12 @@ function addHoverEvents(container) {
     const overlay = container.querySelector('.overlay');
 
     container.addEventListener('mouseenter', function () {
-        overlay?.classList.remove('dNone');
+        overlay?.classList.remove('dNonePortfolio');
         img?.classList.add('zoomed');
     });
 
     container.addEventListener('mouseleave', function () {
-        overlay?.classList.add('dNone');
+        overlay?.classList.add('dNonePortfolio');
         img?.classList.remove('zoomed');
     });
 }
