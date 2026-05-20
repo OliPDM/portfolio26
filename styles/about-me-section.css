@@ -1,31 +1,40 @@
 .about_me_section {
     display: flex;
     width: 100%;
-    padding-top: 100px;
-    padding-right: 100px;
-    padding-left: 100px;
+    padding-top: clamp(60px, 10vh, 100px);
+    padding-right: clamp(20px, 8vw, 100px);
+    padding-left: clamp(20px, 8vw, 100px);
     justify-content: space-between;
     align-items: center;
-    gap: 60px;
+    gap: clamp(30px, 5vw, 60px);
     box-sizing: border-box;
     background-color: #141D2F;
     isolation: isolate;
+    position: relative;
 }
 
 .about_me_section h1 {
-    font-size: 90px;
-    margin-bottom: 20px;
+    font-size: clamp(36px, 8vw, 90px);
+    margin-bottom: clamp(12px, 2vh, 20px);
 }
 
 .infobox {
-    width: 470px;
+    width: clamp(300px, 40vw, 470px);
+    z-index: 3;
+}
+
+.infobox>span {
+    font-size: clamp(15px, 2vw, 18px);
+    line-height: 1.6;
 }
 
 .vector-bg-img {
     width: 100%;
     position: absolute;
-    top: 1600px;
+    left: 0;
+    top: clamp(290px, 45vh, 600px);
     z-index: 0;
+    pointer-events: none;
 }
 
 .profile_picture_container {
@@ -33,19 +42,21 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    right: 100px;
+    right: clamp(0px, 8vw, 100px);
+    flex-shrink: 0;
 }
 
 .profile_picture {
-    width: 520px;
-    height: 640px;
-    border-radius: 20px;
+    width: clamp(280px, 35vw, 520px);
+    height: clamp(350px, 43vw, 640px);
+    border-radius: clamp(12px, 2vw, 20px);
     z-index: 1;
+    object-fit: cover;
 }
 
 .placeholder_span {
     position: absolute;
-    font-size: 60px;
+    font-size: clamp(28px, 5vw, 60px);
     color: rgba(0, 0, 0, 0.4);
     rotate: -45deg;
     z-index: 2;
@@ -54,21 +65,28 @@
 .short_info_container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    max-width: 600px;
-    padding-top: 24px;
+    font-size: clamp(16px, 2vw, 18px);
+    gap: clamp(20px, 3vh, 30px);
+    max-width: clamp(300px, 50vw, 600px);
+    padding-top: clamp(16px, 2vh, 24px);
 }
 
 .short_info {
     display: flex;
-    align-items: center;
-    gap: 16px;
+    align-items: flex-start;
+    gap: clamp(12px, 2vw, 16px);
+}
+
+.short_info span {
+    line-height: 1.6;
+    flex: 1;
 }
 
 .about_me_icons {
-    width: 48px;
-    height: 48px;
+    width: clamp(32px, 4vw, 48px);
+    height: clamp(32px, 4vw, 48px);
     z-index: 1;
+    flex-shrink: 0;
 }
 
 .about_me_icons:hover {
@@ -78,7 +96,159 @@
 
 .about-me-section-shadows {
     position: absolute;
-    right: 2px;
-    top: 1169px;
+    padding-top: 350px;
+    height: 1100px;
     z-index: -1;
+    pointer-events: none;
+}
+
+/* ⚠️ TABLET */
+@media(max-width: 1024px) {
+    .about_me_section {
+        padding: clamp(60px, 10vh, 80px) clamp(30px, 5vw, 40px);
+        gap: clamp(30px, 4vw, 40px);
+    }
+
+    .profile_picture_container {
+        right: clamp(0px, 3vw, 20px);
+    }
+
+    .infobox {
+        width: clamp(280px, 45vw, 450px);
+    }
+}
+
+/* ⚠️ MOBILE */
+@media(max-width: 768px) {
+    .about_me_section {
+        flex-direction: column;
+        padding: clamp(40px, 8vh, 60px) clamp(16px, 4vw, 24px) clamp(60px, 10vh, 80px);
+        gap: clamp(32px, 6vh, 48px);
+        align-items: center;
+    }
+
+    /* ⚠️ Bild OBEN */
+    .profile_picture_container {
+        right: 0;
+        order: 1;
+        width: 100%;
+        max-width: clamp(280px, 80vw, 400px);
+    }
+
+    .profile_picture {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 13/16;
+    }
+
+    /* ⚠️ Text UNTEN */
+    .infobox {
+        z-index: 3;
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about_me_section h1 {
+        font-size: clamp(32px, 8vw, 48px);
+        text-align: left;
+    }
+
+    .infobox>span {
+        font-size: clamp(14px, 3vw, 16px);
+    }
+
+    .short_info_container {
+        font-size: clamp(14px, 3vw, 16px);
+        gap: clamp(16px, 3vh, 24px);
+    }
+
+    .about_me_icons {
+        width: clamp(28px, 6vw, 40px);
+        height: clamp(28px, 6vw, 40px);
+    }
+
+    .placeholder_span {
+        font-size: clamp(24px, 6vw, 40px);
+    }
+}
+
+/* ⚠️ SMALL MOBILE - 480px */
+@media(max-width: 480px) {
+    .about_me_section {
+        padding: 40px 16px 60px;
+        gap: 28px;
+    }
+
+    .about_me_section h1 {
+        font-size: 36px;
+    }
+
+    .profile_picture_container {
+        max-width: 300px;
+    }
+}
+
+/* ⚠️ EXTRA SMALL - 375px */
+@media(max-width: 375px) {
+    .about_me_section {
+        padding: 36px 14px 50px;
+        gap: 24px;
+    }
+
+    .about_me_section h1 {
+        font-size: 32px;
+    }
+
+    .profile_picture_container {
+        max-width: 260px;
+    }
+
+    .short_info_container {
+        font-size: 13px;
+        gap: 16px;
+    }
+
+    .about_me_icons {
+        width: 30px;
+        height: 30px;
+    }
+
+    .placeholder_span {
+        font-size: 26px;
+    }
+}
+
+/* ⚠️ MINIMUM - 320px */
+@media(max-width: 320px) {
+    .about_me_section {
+        padding: 32px 12px 44px;
+        gap: 20px;
+    }
+
+    .about_me_section h1 {
+        font-size: 28px;
+    }
+
+    .infobox>span {
+        font-size: 13px;
+    }
+
+    .profile_picture_container {
+        max-width: 240px;
+    }
+
+    .short_info_container {
+        font-size: 12px;
+        gap: 14px;
+    }
+
+    .about_me_icons {
+        width: 28px;
+        height: 28px;
+    }
+
+    .placeholder_span {
+        font-size: 24px;
+    }
 }

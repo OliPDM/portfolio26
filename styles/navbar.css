@@ -109,6 +109,69 @@ nav {
     color: #70e71a;
 }
 
+.menu-icon {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    padding-bottom: 0;
+    padding-right: 0;
+    margin-right: -0.5rem;
+    cursor: pointer;
+}
+
+.menu-icon-line-top {
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    padding-bottom: 0;
+    padding-right: 0;
+    transition: transform 0.7s;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+}
+
+.menu-icon-line-top.active {
+    transform: translate3d(0px, 8px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(-45deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+}
+
+.menu-icon-line-middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-bottom: 0;
+    padding-right: 0;
+    transition: width 0.3s;
+}
+
+.menu-icon-line-middle.active {
+    width: 0px;
+    height: 2px;
+}
+
+.menu-icon-line-bottom {
+    width: 24px;
+    height: 2px;
+    background-color: white;
+    padding-bottom: 0;
+    padding-right: 0;
+    transition: transform 0.7s;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotate(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+}
+
+.menu-icon-line-bottom.active {
+    transform: translate3d(0px, -8px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(45deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+}
+
 /* --- Modal --- */
 .modal {
     display: flex;
@@ -117,24 +180,22 @@ nav {
     position: fixed;
     top: 109px;
     right: 0;
-    width: 309px;
-    height: calc(100vh - 109px);
+    width: 250px;
+    height: 500px;
     background-color: #414857;
-    transform: translateY(-121%);
+    transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     z-index: 98;
 }
 
 .modal.show {
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 .modal-content {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 114px;
-    height: 272px;
     gap: 29px;
 }
 
@@ -186,7 +247,7 @@ nav {
         display: none;
     }
 
-    .burger-menu {
+    .menu-icon {
         display: flex;
         cursor: pointer;
     }

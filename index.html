@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 
 <head>
     <meta charset="UTF-8">
@@ -59,8 +59,11 @@
                     <button class="language-button" id="en_button" onclick="setLanguageEN()">EN</button>
                 </div>
 
-                <img id="burger_menu" class="burger-menu dNone" onclick="toggleModal()"
-                    src="./assets/icons/burger_menu.png" alt="Burger Menu">
+                <div id="burger_menu" class="menu-icon dNone" onclick="toggleModal()">
+                    <div class="menu-icon-line-top"></div>
+                    <div class="menu-icon-line-middle"></div>
+                    <div class="menu-icon-line-bottom"></div>
+                </div>
 
             </div>
 
@@ -153,11 +156,10 @@
             <div class="profile_picture_container">
                 <span class="placeholder_span">placeholder</span>
                 <img class="profile_picture" src="./assets/img/profile_picture.png" alt="">
+                <img class="about-me-section-shadows" src="./assets/img/purple_green_shadow.png" alt="">
             </div>
             <img class="vector-bg-img" src="./assets/img/Vector.png" alt="">
-            <div class="about-me-section-shadows">
-                <img src="./assets/img/purple_green_shadow.png" alt="">
-            </div>
+
         </section>
 
 

@@ -10,13 +10,18 @@ function setActiveNav(clickedLink) {
 
 function toggleModal() {
     let modal = document.querySelector('.modal');
-    let burgerMenu = document.querySelector('#burger_menu');
+    const menuIconTop = document.querySelector('.menu-icon-line-top');
+    const menuIconMiddle = document.querySelector('.menu-icon-line-middle');
+    const menuIconBottom = document.querySelector('.menu-icon-line-bottom');
+    menuIconTop.classList.toggle('active');
+    menuIconMiddle.classList.toggle('active');
+    menuIconBottom.classList.toggle('active');
     modal.classList.toggle('show');
     if (modal.classList.contains('dNone')) {
         modal.classList.remove('dNone');
         setTimeout(() => {
             modal.classList.add('show');
-        }, 10);
+        }, 5);
     } else {
         modal.classList.remove('show');
         setTimeout(() => {
@@ -26,7 +31,13 @@ function toggleModal() {
 }
 
 function closeModal(params) {
-    let modal = document.querySelector('modal');
+    const modal = document.querySelector('.modal');
+    const menuIconTop = document.querySelector('.menu-icon-line-top');
+    const menuIconMiddle = document.querySelector('.menu-icon-line-middle');
+    const menuIconBottom = document.querySelector('.menu-icon-line-bottom');
+    if (menuIconTop) menuIconTop.classList.remove('active');
+    if (menuIconMiddle) menuIconMiddle.classList.remove('active');
+    if (menuIconBottom) menuIconBottom.classList.remove('active');
     modal.classList.remove('show');
     setTimeout(() => {
         modal.classList.add('dNone');
